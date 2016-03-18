@@ -74,6 +74,18 @@ public class SimpleJokeBook {
         mJokes.add(j4);
 
 
+
+    }
+
+    // note: ID not guaranteed to be unique/
+    public void addJokeToBook(String id, String question, String answer){
+        Joke newJoke = new Joke(id, question, answer);
+        mJokes.add(newJoke);
+
+    }
+
+    public int getJokeCount(){
+        return mJokes.size();
     }
 
 
