@@ -2,7 +2,23 @@ package com.example;
 
 public class JokeLibrary {
 
-    public static String getJoke(){
-        return "A crazy Joke";
+    private static SimpleJokeBook mJokeSource;
+
+    public JokeLibrary(){
+        this.mJokeSource = SimpleJokeBook.getInstance();
+
     }
+
+
+    public Joke getJoke(){
+
+        return mJokeSource.getRandomJoke();
+    }
+
+
+
+
+
+
+
 }
