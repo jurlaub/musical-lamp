@@ -2,4 +2,13 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Layout_Margin-->
+    <dimen name="joke_question_top_padding">16dp</dimen>
+    <dimen name="joke_question_bottom_padding">16dp</dimen>
+    <dimen name="joke_answer_top_padding">@dimen/joke_question_top_padding</dimen>
+    <dimen name="joke_answer_bottom_padding">@dimen/joke_question_bottom_padding</dimen>
+
+    <dimen name="joke_button_margin">16dp</dimen>
+
 </resources>

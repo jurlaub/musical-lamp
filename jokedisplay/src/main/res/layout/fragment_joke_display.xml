@@ -1,20 +1,34 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     >
 
 
     <TextView
         android:id="@+id/questionText"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/sample_question" />
+        android:layout_height="wrap_content"
+        android:text="@string/sample_question"
+        android:gravity="center"
+        android:paddingTop="@dimen/joke_question_top_padding"
+        android:paddingBottom="@dimen/joke_question_bottom_padding" />
 
     <TextView
         android:id="@+id/answerText"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/sample_answer"/>
+        android:layout_height="wrap_content"
+        android:text="@string/sample_answer"
+        android:gravity="center"
+        android:paddingTop="@dimen/joke_answer_top_padding"
+        android:paddingBottom="@dimen/joke_answer_bottom_padding" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/answerButton"
+        android:text="@string/answerButton"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/joke_button_margin" />
 
 </LinearLayout>

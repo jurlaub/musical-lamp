@@ -5,8 +5,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!-- Sample Strings-->
-    <string name="sample_question">This is a test question, isn't it nice?</string>
+    <string name="sample_question">This is a test question, isn\'t it nice?</string>
     <string name="sample_answer">This is a test answer, Now you know! :)</string>
+
+    <string name="answerButton">Answer</string>
 
 
 </resources>
