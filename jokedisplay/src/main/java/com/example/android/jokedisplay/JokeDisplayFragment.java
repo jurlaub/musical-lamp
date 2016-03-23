@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 /**
@@ -13,6 +14,8 @@ import android.view.ViewGroup;
  */
 public class JokeDisplayFragment extends Fragment {
 
+    // used to change the button text
+    private boolean mDisplayAnswer = true;
 
 
 
@@ -20,10 +23,26 @@ public class JokeDisplayFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_joke_display, container, false);
+        final View view = inflater.inflate(R.layout.fragment_joke_display, container, false);
 
 
+        final Button button = (Button)view.findViewById(R.id.answerButton);
 
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(mDisplayAnswer == true) {
+                    mDisplayAnswer = false;
+                    button.setText(R.string.finishButton);
+
+                } else {
+                    getActivity().finish();
+                }
+
+
+            }
+        });
 
 
         return view;

@@ -9,6 +9,7 @@
     <string name="sample_answer">This is a test answer, Now you know! :)</string>
 
     <string name="answerButton">Answer</string>
+    <string name="finishButton">Finish</string>
 
 
 </resources>
