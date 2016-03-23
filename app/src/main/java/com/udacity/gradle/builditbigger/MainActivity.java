@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.Joke;
 import com.example.JokeLibrary;
 import com.example.android.jokedisplay.DisplayActivity;
 
@@ -47,10 +48,16 @@ public class MainActivity extends ActionBarActivity {
 
     public void tellJoke(View view){
 
-//        Joke joke = mJokeLibrary.getJoke();
+        Joke joke = mJokeLibrary.getJoke();
+
 //
 //        Toast.makeText(this, joke.getJokeQuestion(), Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, DisplayActivity.class);
+
+        intent.putExtra(DisplayActivity.QUESTION_TEXT, joke.getJokeQuestion());
+        intent.putExtra(DisplayActivity.ANSWER_TEXT, joke.getJokeAnswer());
+
+
         startActivity(intent);
 
 

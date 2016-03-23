@@ -15,8 +15,13 @@ import android.widget.TextView;
  */
 public class JokeDisplayFragment extends Fragment {
 
+
+
     // used to change the button text
     private boolean mDisplayAnswer = true;
+
+    private String mQuestion;
+    private String mAnswer;
 
 
 
@@ -26,11 +31,26 @@ public class JokeDisplayFragment extends Fragment {
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_joke_display, container, false);
 
+
+        if (savedInstanceState == null){
+            Bundle extras = getActivity().getIntent().getExtras();
+            mQuestion = extras.getString(DisplayActivity.QUESTION_TEXT);
+            mAnswer = extras.getString(DisplayActivity.ANSWER_TEXT);
+        } else {
+            mQuestion = savedInstanceState.getString(DisplayActivity.QUESTION_TEXT);
+            mAnswer = savedInstanceState.getString(DisplayActivity.ANSWER_TEXT);
+        }
+
+        TextView questionText = (TextView)view.findViewById(R.id.questionText);
+        questionText.setText(mQuestion);
+
+
         final TextView answerText = (TextView)view.findViewById(R.id.answerText);
+        answerText.setText(mAnswer);
         answerText.setVisibility(View.INVISIBLE);
 
-        final Button button = (Button)view.findViewById(R.id.answerButton);
 
+        final Button button = (Button)view.findViewById(R.id.answerButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

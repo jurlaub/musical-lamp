@@ -7,6 +7,9 @@ import android.support.v4.app.FragmentManager;
 
 public class DisplayActivity extends FragmentActivity {
 
+    public final static String QUESTION_TEXT = "question_text";
+    public final static String ANSWER_TEXT = "answer_text";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
