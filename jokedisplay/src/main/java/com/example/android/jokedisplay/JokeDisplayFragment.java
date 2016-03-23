@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 /**
@@ -25,6 +26,8 @@ public class JokeDisplayFragment extends Fragment {
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_joke_display, container, false);
 
+        final TextView answerText = (TextView)view.findViewById(R.id.answerText);
+        answerText.setVisibility(View.INVISIBLE);
 
         final Button button = (Button)view.findViewById(R.id.answerButton);
 
@@ -35,6 +38,8 @@ public class JokeDisplayFragment extends Fragment {
                 if(mDisplayAnswer == true) {
                     mDisplayAnswer = false;
                     button.setText(R.string.finishButton);
+
+                    answerText.setVisibility(View.VISIBLE);
 
                 } else {
                     getActivity().finish();
