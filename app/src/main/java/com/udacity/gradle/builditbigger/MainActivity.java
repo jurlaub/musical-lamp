@@ -11,7 +11,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.JokeLibrary;
 import com.example.dev.cloudii.backend.myApi.MyApi;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
@@ -21,13 +20,13 @@ import java.io.IOException;
 
 public class MainActivity extends ActionBarActivity {
 
-    private JokeLibrary mJokeLibrary;
+//    private JokeLibrary mJokeLibrary;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mJokeLibrary = new JokeLibrary();
+//        mJokeLibrary = new JokeLibrary();
 
 
     }
@@ -109,10 +108,11 @@ public class MainActivity extends ActionBarActivity {
             }
 
             context = params[0].first;
-            String name = params[0].second;
+//            String name = params[0].second;
 
             try {
-                return myApiService.sayHi(name).execute().getData();
+//                return myApiService.sayHi(name).execute().getData();
+                return myApiService.getJoke().execute().toString();
             } catch (IOException e) {
                 return e.getMessage();
             }
@@ -120,6 +120,8 @@ public class MainActivity extends ActionBarActivity {
 
         @Override
         protected void onPostExecute(String result) {
+//            Log.v("onPostExecute", "string 2: " + r2);
+
             Toast.makeText(context, result, Toast.LENGTH_LONG).show();
         }
     }

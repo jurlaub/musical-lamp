@@ -9,6 +9,10 @@ public class Joke {
     private String jokeQuestion;
     private String jokeAnswer;
 
+    public Joke(){
+
+    }
+
     public Joke(String jokeID) {
         this.jokeID = jokeID;
     }
