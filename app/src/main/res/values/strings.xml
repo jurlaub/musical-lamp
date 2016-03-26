@@ -4,4 +4,10 @@
     <string name="button_text">Tell Joke</string>
     <string name="action_settings">Settings</string>
     <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+
+    <string name="network_not_detected">No network connection detected</string>
+
+    <string name="default_question">This is where a truely awesome joke or riddle would go!</string>
+    <string name="default_answer">The answer to life, the universe, and everything is 42.</string>
+
 </resources>
