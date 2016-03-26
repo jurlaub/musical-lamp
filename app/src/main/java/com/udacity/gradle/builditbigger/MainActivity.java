@@ -22,6 +22,9 @@ public class MainActivity extends ActionBarActivity {
 
 //    private JokeLibrary mJokeLibrary;
 
+    private String mJokeQuestion;
+    private String mJokeAnswer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +84,7 @@ public class MainActivity extends ActionBarActivity {
     private class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
         private  MyApi myApiService = null;
         private Context context;
+        private String remoteData;
 
         @Override
         protected String doInBackground(Pair<Context, String>... params) {
@@ -112,7 +116,8 @@ public class MainActivity extends ActionBarActivity {
 
             try {
 //                return myApiService.sayHi(name).execute().getData();
-                return myApiService.getJoke().execute().toString();
+                remoteData = myApiService.getJoke().execute().toString();
+                return remoteData;
             } catch (IOException e) {
                 return e.getMessage();
             }
@@ -120,10 +125,15 @@ public class MainActivity extends ActionBarActivity {
 
         @Override
         protected void onPostExecute(String result) {
-//            Log.v("onPostExecute", "string 2: " + r2);
+            Log.v("onPostExecute", "string 2: " + result);
 
             Toast.makeText(context, result, Toast.LENGTH_LONG).show();
         }
+    }
+
+
+    private void getJokeFromJSON(String jokeJSONStr) {
+
     }
 
 
