@@ -128,7 +128,8 @@ public class MainActivity extends ActionBarActivity {
 
         // save values in case of rotation
         SharedPreferences.Editor editor = this.getPreferences(Context.MODE_PRIVATE).edit();
-        editor.putString(JOKEQUESTION, mJokeAnswer);
+        editor.putString(JOKEQUESTION, mJokeQuestion);
+        editor.putString(JOKEANSWER, mJokeAnswer);
         editor.apply();
 
     }
