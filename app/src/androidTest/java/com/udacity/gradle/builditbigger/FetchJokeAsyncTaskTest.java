@@ -1,18 +1,14 @@
+package com.udacity.gradle.builditbigger;
+
 import android.test.AndroidTestCase;
 import android.util.Log;
 
-import com.udacity.gradle.builditbigger.FetchJokeAsyncTask;
-import com.udacity.gradle.builditbigger.IDownloadListener;
-
 import junit.framework.Assert;
 
-import java.lang.Exception;
-import java.lang.InterruptedException;
-import java.lang.Override;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-public class FetchJokeAsyncTaskTests extends AndroidTestCase implements IDownloadListener {
+public class FetchJokeAsyncTaskTest extends AndroidTestCase implements IDownloadListener {
 
     FetchJokeAsyncTask mFetchJokeAsyncTask;
     CountDownLatch signal;
@@ -57,6 +53,18 @@ public class FetchJokeAsyncTaskTests extends AndroidTestCase implements IDownloa
         this.testAnswer = answer;
 
     }
+
+
+//    public void testToFail() throws InterruptedException {
+//
+//        mFetchJokeAsyncTask.download();
+//        signal.await(30, TimeUnit.SECONDS);
+//
+////        Assert.assertTrue(testAnswer.length() > 5);
+////        Assert.assertEquals(testQuestion + " :::" + testAnswer, testQuestion, "howdyDuty");
+//
+//
+//    }
 
 
 }
